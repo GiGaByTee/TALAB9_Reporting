@@ -1,0 +1,9 @@
+<!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd" >
+
+<suite name="Suite1" verbose="2">
+    <test name="Login and delete last 3 letters in important folder" >
+        <classes>
+            <class name="GmailTest"/>
+        </classes>
+    </test>
+</suite>

@@ -1,0 +1,47 @@
+configuration:
+  name: Log4j2_Config
+
+  Properties:
+    property:
+      name: log_path
+      value: "logs"
+
+  Appenders:
+
+    Console:
+      name: Console
+      PatternLayout:
+        disableAnsi: false
+        Pattern: "%highlight{%-5level}{FATAL=bg_red}%highlight{%msg} %xEx{short}%n"
+
+
+  Loggers:
+
+    Root:
+      level: all
+
+    Logger:
+    - name: GmailTest
+      level: all
+      AppenderRef:
+      - ref: Console
+
+    - name: businessObjects.LoginBO
+      level: all
+      AppenderRef:
+      - ref: Console
+
+    - name: businessObjects.MessagesBO
+      level: all
+      AppenderRef:
+      - ref: Console
+
+    - name: pageObjects.ImportantMessagePage
+      level: all
+      AppenderRef:
+      - ref: Console
+
+    - name: pageObjects.MainPage
+      level: all
+      AppenderRef:
+      - ref: Console
