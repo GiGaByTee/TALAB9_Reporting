@@ -1,0 +1,40 @@
+{
+  "users": {
+    "email_address": [
+      "groot.epam@gmail.com",
+      "paprika0015@gmail.com",
+      "sonyachanter@gmail.com",
+      "orest.zhmurkevych.secondary@gmail.com",
+      "zuckinnyjetsoftpro@gmail.com"
+    ],
+    "passwords": [
+      "iamgroot",
+      "423489123789op",
+      "sonichka13",
+      "passwordfortest",
+      "jetsoftprohui"
+    ]
+  },
+  "password": "iamgroot",
+  "receivers": {
+    "incorrect_receiver": "Tralalala",
+    "receiver": "annaetienneclair@gmail.com"
+  },
+  "messages": [
+    "HAWKEYE'S FAMILY DIES IN THE OPENING SCENE",
+    "CAPTAIN MARVEL SAVES TONY STARK",
+    "THE AVENGERS KILL THANOS AT THE START",
+    "THANOS DESTROYED THE STONES",
+    "TONY STARK AND PEPPER POTTS HAVE A CHILD, MORGAN",
+    "HE AVENGERS' PLAN IS TO STEAL THE STONES FROM THE PAST USING TIME TRAVEL",
+    "BLACK WIDOW DIES TO GET THE SOUL STONE",
+    "THANOS FROM 2014 COMES TO THE FUTURE",
+    "HULK BRINGS BACK THE SNAP VICTIMS",
+    "CHARACTERS STAY DEAD",
+    "PAST ACTORS RETURN",
+    "CAPTAIN AMERICA WIELDS MJOLNIR",
+    "IRON MAN DIES TO COMPLETE DOCTOR STRANGE'S PLAN",
+    "THOR JOINS THE GUARDIANS OF THE GALAXY",
+    "STEVE ROGERS GETS HIS DANCE"
+  ]
+}
