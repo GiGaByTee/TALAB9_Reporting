@@ -36,7 +36,16 @@ configuration:
 
 
     Logger:
-      name: TestGmail
+     - name: WriteMessageBO
+      additivity: false
+      level: trace
+      AppenderRef:
+        - ref: File_AppenderHigherWarn
+          level: warn
+        - ref: Console_Appender
+          level: info
+
+      - name: MyCustomListener
       additivity: false
       level: trace
       AppenderRef:

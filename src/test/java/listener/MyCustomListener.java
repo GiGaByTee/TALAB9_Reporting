@@ -12,6 +12,7 @@ import org.testng.TestListenerAdapter;
 import java.util.Objects;
 
 public class MyCustomListener extends TestListenerAdapter {
+
     private Logger logger = LogManager.getLogger(MyCustomListener.class);
 
     public void onTestStart(ITestResult result){

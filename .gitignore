@@ -1,8 +1,27 @@
+.idea/
+build/
+gradle/wrapper
+*.iml
+*.iws
+target/
+pom.xml.tag
+pom.xml.releaseBackup
+pom.xml.versionsBackup
+pom.xml.next
+release.properties
+dependency-reduced-pom.xml
+buildNumber.properties
+.mvn/timing.properties
+.mvn/wrapper/maven-wrapper.jar
+
 # Compiled class file
 *.class
 
 # Log file
 *.log
+
+#screenshots
+*.png
 
 # BlueJ files
 *.ctxt

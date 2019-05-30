@@ -17,7 +17,6 @@ import java.io.File;
 
 @Listeners({MyCustomListener.class})
 class TestGmail {
-    private Logger logger = LogManager.getLogger(TestGmail.class);
 
     @DataProvider(parallel = true)
     public Object[] getUsers() {
@@ -31,19 +30,15 @@ class TestGmail {
     public void LoginTest(UserModel user) {
         SignInBO signIn = new SignInBO();
         signIn.login(user.getLogin(), user.getPassword());
-        logger.info("You have successfully logged in.");
 
         WriteMessageBO writeMessage = new WriteMessageBO();
         writeMessage.tryToWriteMessage(
                 user.getMessageModel().getReceiver(),
                 user.getMessageModel().getSubject(),
                 user.getMessageModel().getMessage());
-        logger.info("Message was wrote but was not sent.");
 
         Assert.assertTrue(writeMessage.isSaveInDraft(user.getMessageModel().getSubject()));
-        logger.info("Message was saved as a draft.");
         writeMessage.sendMessage();
-        logger.info("Message was sent.");
     }
 
     @AfterMethod
