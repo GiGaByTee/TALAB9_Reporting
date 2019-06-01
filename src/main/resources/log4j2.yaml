@@ -1,0 +1,36 @@
+configuration:
+ name: Log4j2_Config
+
+ Properties:
+    property:
+        name: log_path
+        value: "logs"
+
+ Appenders:
+
+    Console:
+    - name: Console
+      PatternLayout:
+           disableAnsi: false
+           Pattern: "%highlight{%-5level}{FATAL=bg_red}%highlight{%msg} %xEx{short}%n"
+
+    File:
+    - name: File
+      fileName: Logs/test-yaml.log
+      PatternLayout:
+            pattern: "[%-5level] %d{yyyy-MM-dd HH:mm:ss.SSS} [%t] %c{1} - %msg%n"
+
+
+ Loggers:
+    Root:
+      level: all
+      AppenderRef:
+      - ref: Console
+      - ref: File
+
+    Logger:
+        name: listener.CustomListener
+        AppenderRef:
+        - ref: Console
+        - ref: File
+
