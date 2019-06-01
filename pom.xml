@@ -26,13 +26,18 @@
                     <suiteXmlFiles>
                         <suiteXmlFile>testng.xml</suiteXmlFile>
                     </suiteXmlFiles>
+                    <systemPropertyVariables>
+                        <org.uncommons.reportng.escape-output>
+                            false
+                        </org.uncommons.reportng.escape-output>
+                    </systemPropertyVariables>
+
                     <!-- Setting properties for test execution -->
                     <properties>
                         <!-- Setting ReportNG listeners -->
                         <property>
                             <name>listener</name>
-                            <value>org.uncommons.reportng.HTMLReporter, org.uncommons.reportng.JUnitXMLReporter,
-                                com.igor.listener.ScreenshotFailureListener</value>
+                            <value>org.uncommons.reportng.HTMLReporter</value>
                         </property>
                     </properties>
                 </configuration>

@@ -9,14 +9,17 @@ import org.openqa.selenium.TakesScreenshot;
 import org.testng.ITestContext;
 import org.testng.ITestListener;
 import org.testng.ITestResult;
+import org.testng.Reporter;
 
 import java.io.File;
 import java.io.IOException;
+import java.text.DateFormat;
 import java.text.SimpleDateFormat;
 import java.util.Date;
 
 public class ScreenshotFailureListener implements ITestListener {
     private static final Logger LOGGER = LogManager.getLogger(ScreenshotFailureListener.class);
+
 
     @Override
     public void onTestStart(ITestResult result) {
@@ -31,12 +34,26 @@ public class ScreenshotFailureListener implements ITestListener {
     @Override
     public void onTestFailure(ITestResult result) {
         try {
-            File scrFile = ((TakesScreenshot) DriverProvider.getDriver()).getScreenshotAs(OutputType.FILE);
-            String currentDate = new SimpleDateFormat("yyyy-MM-dd HH.mm.ss").format(new Date(System.currentTimeMillis()));
-            FileUtils.copyFile(scrFile, new File(String.format("screenshots/screenshot-Date %s Thread %s.png", currentDate, Thread.currentThread().getId())));
+            File screenshot = ((TakesScreenshot) DriverProvider.getDriver()).getScreenshotAs(OutputType.FILE);
+            String nameScreenshot = "screenshot";
+            String path = getPath(nameScreenshot);
+            FileUtils.copyFile(screenshot, new File(path));
+            Reporter.log("<br>  <img src=" + path + " height='100' width='100' /><br>");
+            Reporter.log("<a href=" + path + " target='_blank' >" + getFileName(nameScreenshot) + "</a>");
         } catch (IOException e) {
             LOGGER.error(e.getMessage());
         }
+    }
+
+    private String getFileName(String nameTest) {
+        DateFormat dateFormat = new SimpleDateFormat("MM-dd-yyyy_hh.mm.ss");
+        Date date = new Date();
+        return dateFormat.format(date) + "_" + nameTest + ".png";
+    }
+
+    private String getPath(String nameTest) throws IOException {
+        File directory = new File(".");
+        return directory.getCanonicalPath() + "\\target\\surefire-reports\\screenShots\\" + getFileName(nameTest);
     }
 
     @Override
