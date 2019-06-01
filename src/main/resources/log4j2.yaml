@@ -1,0 +1,46 @@
+configuration:
+  name: Log4j2_Config
+
+  Properties:
+    property:
+      name: log_path
+      value: "logs"
+
+
+
+  Appenders:
+    File:
+      - name: File_AppenderHigherWarn
+        fileName: logs/File_AppenderHIGHERWARN.log
+        PatternLayout:
+          Pattern: "%highlight{%-5level} %style{%date{yyyy-MM-dd
+                  HH:mm:ss.SSS}}{blue} %class{1}:%L - %highlight{%msg} %xEx{short}%n"
+        Filters:
+          ThresholdFilter:
+            level: error
+            onMatch: NEUTRAL
+            onMismatch: DENY
+
+    Console:
+      name: Console_Appender
+      PatternLayout:
+        Pattern: "%highlight{%-5level}{FATAL=bg_red}  %highlight{%msg} %xEx{short}%n"
+
+  Loggers:
+
+    Root:
+      level: all
+      AppenderRef:
+        - ref: Console_Appender
+        - ref: File_AppenderHigherWarn
+
+
+    Logger:
+      name: TestGmail
+      additivity: false
+      level: trace
+      AppenderRef:
+        - ref: File_AppenderHigherWarn
+          level: warn
+        - ref: Console_Appender
+          level: info

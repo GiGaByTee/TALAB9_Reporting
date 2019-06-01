@@ -1,0 +1,57 @@
+plugins {
+    id 'java'
+    id 'maven-publish'
+}
+
+repositories {
+    mavenLocal()
+    maven {
+        url = 'http://repo.maven.apache.org/maven2'
+    }
+}
+
+dependencies {
+    compile 'org.seleniumhq.selenium:selenium-java:3.8.1'
+    compile 'org.apache.logging.log4j:log4j-api:2.11.1'
+    compile 'org.apache.logging.log4j:log4j-core:2.11.1'
+    compile 'org.apache.maven.plugins:maven-surefire-report-plugin:3.0.0-M3'
+    compile 'org.apache.maven.plugins:maven-surefire-plugin:3.0.0-M3'
+    compile 'com.fasterxml.jackson.dataformat:jackson-dataformat-yaml:2.9.6'
+    compile 'com.fasterxml.jackson.core:jackson-databind:2.9.5'
+    compile group: 'com.google.inject', name: 'guice', version: '3.0'
+    testCompile 'org.testng:testng:7.0.0-beta3'
+    testCompile ("org.uncommons:reportng:1.1.2") {
+        exclude group: "org.testng", module: "testng"
+    }
+    
+}
+
+group = 'com.IvankaBoiko'
+version = '1.0-SNAPSHOT'
+sourceCompatibility = '8'
+
+publishing {
+    publications {
+        maven(MavenPublication) {
+            from(components.java)
+        }
+    }
+}
+
+test {
+    useTestNG() {
+        options {
+            useDefaultListeners = false
+            suites 'src/test/java/resources/testng.xml'
+            reports.html.setDestination(file("$buildDir/reportNG"))
+            listeners << 'org.uncommons.reportng.HTMLReporter'
+            listeners << 'org.uncommons.reportng.JUnitXMLReporter'
+            listeners << 'listener.CustomTestNGListener'
+        }
+        testLogging {
+            events "PASSED", "FAILED", "SKIPPED"
+        }
+    }
+}
+
+
