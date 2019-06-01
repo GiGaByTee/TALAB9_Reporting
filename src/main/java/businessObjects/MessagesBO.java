@@ -38,6 +38,7 @@ public class MessagesBO {
     private int checkLettersAmount() {
         return importantMessagePage.getLetterInFolderAmount();
     }
+
     @Step("Select {letterAmount} messages and delete them from important folder step")
     public int deleteMessages(int letterAmount) {
         importantMessagePage.selectLettersInImportantFolder(letterAmount);

@@ -3,60 +3,79 @@ package allure;
 import driver.DriverLoader;
 import io.qameta.allure.Attachment;
 import org.apache.commons.io.FileUtils;
+import org.apache.log4j.Logger;
 import org.openqa.selenium.OutputType;
 import org.openqa.selenium.TakesScreenshot;
-import org.testng.ITestContext;
-import org.testng.ITestResult;
-import org.testng.TestListenerAdapter;
+import org.testng.*;
 import org.testng.annotations.Listeners;
+
 
 import java.io.File;
 import java.io.IOException;
-import java.text.SimpleDateFormat;
-import java.util.GregorianCalendar;
+import java.nio.file.Files;
+import java.nio.file.Path;
+import java.nio.file.Paths;
 
 import static java.lang.String.format;
-import static org.testng.Reporter.log;
 
 @Listeners
 public class CustomListener extends TestListenerAdapter {
+    private File logFile = new File("test-output/log4j-Allure.log");
+    private Logger log = Logger.getLogger(CustomListener.class.getName());
+
     @Override
     public void onStart(ITestContext context) {
-        log("Test with name: " + context.getName() + ", STARTED in time: " + context.getStartDate().toString());
+        log.info("-------=======  Test \"" + context.getStartDate().toString()+ "\" started =======-------");
     }
 
     @Override
     public void onFinish(ITestContext context) {
-        log("Test completed on: " + context.getEndDate().toString());
+        log.info("-------======= Test \"" + context.getEndDate().toString() + "\" finished =======-------");
     }
 
     @Override
     public void onTestSuccess(ITestResult result) {
-        log(format("result : SUCCESS : %s", result.getMethod().getMethodName()));
+        log.info(format("result : SUCCESS : %s", result.getMethod().getMethodName()));
+        appendLogToAllure();
     }
 
+    @Override
     public void onTestFailure(ITestResult result) {
-        log("result : FAILURE "+ result.getMethod().getMethodName().toUpperCase());
-        File imageFile = ((TakesScreenshot) DriverLoader.getDriver()).getScreenshotAs(OutputType.FILE);
-        String failureImageFileName = result.getMethod().getMethodName()+ new SimpleDateFormat("MM-dd-yyyy_HH-ss")
-                .format(new GregorianCalendar().getTime()) + ".png";
-        String destDir = "./screenshots/";
-        new File(destDir).mkdirs();
-        log(imageFile.toString());
+        log.error("result : FAILURE " + result.getMethod().getMethodName().toUpperCase());
+        getScreenshot();
+        appendLogToAllure();
         try {
-            FileUtils.copyFile(imageFile, new File(destDir + "/" +failureImageFileName));
+            FileUtils.write(new File("test-output/log4j-Allure.log"), "");
         } catch (IOException e) {
             e.printStackTrace();
         }
     }
 
+    @Attachment(value = "Test logs", type = "text/html")
+    private byte[] appendLogToAllure() {
+        try {
+            log.info("Start read logs...........");
+            Path path = Paths.get("test-output/log4j-Allure.log");
+            return Files.readAllBytes(path);
+        } catch (IOException e) {
+            log.error("Can't read logs to Allure Report");
+        }
+        return null;
+    }
+
+    @Attachment(value = "screenshot", type = "image/png")
+    private byte[] getScreenshot() {
+        log.info("Screenshot have been added to Allure Report.");
+        return ((TakesScreenshot) DriverLoader.getDriver()).getScreenshotAs(OutputType.BYTES);
+    }
 
     @Override
     public void onTestSkipped(ITestResult result) {
-        log(result.getMethod().getMethodName() + "result : SKIPPED");
+        log.info(result.getMethod().getMethodName() + "result : SKIPPED");
     }
 
+    @Override
     public void onTestFailedButWithinSuccessPercentage(ITestResult result) {
-        log(("onTestFailedButWithinSuccessPercentage for " + result.getMethod().getMethodName()));
+        log.info("onTestFailedButWithinSuccessPercentage for " + result.getMethod().getMethodName());
     }
 }

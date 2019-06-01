@@ -11,7 +11,7 @@ public class LoginBO {
     public LoginBO() {
         loginPage = new LoginPage();
     }
-    @Step("User ligin with name: {0}, password: {1} using method: {method} step...")
+    @Step("User with email {email} login to cite step")
     public void login(String email, String password) {
         loginPage.typeEmailAndSubmit(email);
         logger.info("User with email "+ email+" entered his email");
