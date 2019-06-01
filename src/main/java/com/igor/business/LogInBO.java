@@ -1,11 +1,9 @@
 package com.igor.business;
 
+import com.igor.logger.CustomLogger;
 import com.igor.page.LogInPage;
-import org.apache.logging.log4j.LogManager;
-import org.apache.logging.log4j.Logger;
 
 public class LogInBO {
-    private static final Logger LOGGER = LogManager.getLogger(LogInBO.class);
     private LogInPage logInPage;
 
     public LogInBO(){
@@ -13,9 +11,9 @@ public class LogInBO {
     }
 
     public void logIn(String username, String password){
-        LOGGER.info("Set username");
+        CustomLogger.info("Set username");
         logInPage.setUsernameAndSubmit(username);
-        LOGGER.info("Set password");
+        CustomLogger.info("Set password");
         logInPage.setPasswordAndSubmit(password);
     }
 }
