@@ -36,7 +36,7 @@ configuration:
 
 
     Logger:
-     - name: WriteMessageBO
+    - name: WriteMessageBO
       additivity: false
       level: trace
       AppenderRef:
@@ -45,7 +45,7 @@ configuration:
         - ref: Console_Appender
           level: info
 
-      - name: MyCustomListener
+    - name: MyCustomListener
       additivity: false
       level: trace
       AppenderRef:

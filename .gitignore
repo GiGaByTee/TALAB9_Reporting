@@ -1,6 +1,4 @@
 .idea/
-build/
-gradle/wrapper
 *.iml
 *.iws
 target/
