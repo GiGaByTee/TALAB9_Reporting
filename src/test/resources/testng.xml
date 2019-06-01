@@ -1,0 +1,12 @@
+<suite name="Suite1" verbose="2" data-provider-thread-count="1" parallel="methods">
+    <listeners>
+        <listener class-name="listener.CustomListener"/>
+        <listener class-name="org.uncommons.reportng.HTMLReporter"/>
+        <listener class-name="org.uncommons.reportng.JUnitXMLReporter"/>
+    </listeners>
+    <test name="Login and delete last 3 letters in important folder" >
+        <classes>
+            <class name="GmailTest"/>
+        </classes>
+    </test>
+</suite>

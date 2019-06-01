@@ -1,0 +1,12 @@
+<Configuration name="ReportNG" packages="">
+  <Appenders>
+    <Console name="console" target="SYSTEM_OUT">
+        <PatternLayout pattern="[%-5level] - %msg%n"/>
+    </Console>
+  </Appenders>
+  <Loggers>
+    <Root>
+        <AppenderRef ref="console"/>
+    </Root>
+  </Loggers>
+</Configuration>
