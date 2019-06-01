@@ -43,12 +43,25 @@ public class CustomListener extends TestListenerAdapter {
     public void onTestFailure(ITestResult result) {
         log.error("result : FAILURE " + result.getMethod().getMethodName().toUpperCase());
         getScreenshot();
+        appendLogToAllure();
         try {
             FileUtils.write(new File("test-output/log4j-Allure.log"), "");
         } catch (IOException e) {
             e.printStackTrace();
         }
     }
+    @Attachment(value = "Test logs", type = "text/html")
+    private byte[] appendLogToAllure() {
+        try {
+            log.info("Start read logs...........");
+            Path path = Paths.get("test-output/log4j-Allure.log");
+            return Files.readAllBytes(path);
+        } catch (IOException e) {
+            log.error("Can't read logs to Allure Report");
+        }
+        return null;
+    }
+
 
 
     @Attachment(value = "screenshot", type = "image/png")
