@@ -4,12 +4,10 @@ import com.sofia.businesslayer.HomeEmailPageBO;
 import com.sofia.businesslayer.LoginBO;
 import com.sofia.utilmanager.driver.DriverManager;
 import com.sofia.utilmanager.property.Property;
+import com.sofia.utilmanager.report.CustomListener;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
-import org.testng.annotations.AfterMethod;
-import org.testng.annotations.BeforeMethod;
-import org.testng.annotations.DataProvider;
-import org.testng.annotations.Test;
+import org.testng.annotations.*;
 
 import java.util.Iterator;
 import java.util.stream.Stream;
@@ -19,6 +17,7 @@ import static com.sofia.utilmanager.jsonparser.JsonParser.*;
 import static org.testng.Assert.assertTrue;
 import static org.testng.AssertJUnit.assertEquals;
 
+@Listeners({CustomListener.class})
 public class GmailUndoDeleteEmailsTest {
     private static final Logger LOG = LogManager.getLogger(GmailUndoDeleteEmailsTest.class);
     private static final int CHECKBOX_AMOUNT = getCheckboxAmount();
