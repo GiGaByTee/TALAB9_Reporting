@@ -1,76 +1,64 @@
 package com.sofia.utilmanager.report;
 
+import org.apache.commons.io.FileUtils;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
-import org.apache.logging.log4j.core.tools.Generate;
-import org.apache.logging.log4j.core.util.FileUtils;
 import org.openqa.selenium.OutputType;
 import org.openqa.selenium.TakesScreenshot;
-import org.testng.ITestContext;
 import org.testng.ITestListener;
 import org.testng.ITestResult;
 
 import java.io.File;
 import java.io.IOException;
-import java.text.DateFormat;
 import java.text.SimpleDateFormat;
 import java.util.Date;
 
+import static com.sofia.utilmanager.driver.DriverManager.getDriverInstance;
+
 public class CustomListener implements ITestListener{
-    private static final Logger LOGGER = LogManager.getLogger(ScreenshotFailureListener.class);
+    private static final Logger LOG = LogManager.getLogger(CustomListener.class);
+    private static final String SCREENSHOT_SAVE_PATH = "logs/screenshots/%s.png";
 
-    @Override
-    public void onTestStart(ITestResult result) {
-
+    private static String getCurrentDateTime() {
+        Date instant = new Date();
+        SimpleDateFormat sdf = new SimpleDateFormat("_yyyy-MM-dd_HH.mm.ss.SSS");
+        return sdf.format(instant);
     }
 
-    @Override
-    public void onTestSuccess(ITestResult result) {
-
+    private static void takeScreenshot(File outputDirectory) {
+        try {
+            File scrFile = ((TakesScreenshot) getDriverInstance()).getScreenshotAs(OutputType.FILE);
+            FileUtils.copyFile(scrFile, outputDirectory);
+            LOG.info("Screenshot taken.");
+        } catch (IOException e) {
+            LOG.error("Can't save screenshot file");
+            LOG.error("Class: " + e.getClass());
+            LOG.error("Message: " + e.getMessage());
+            LOG.error(e.getStackTrace());
+        }
     }
 
     @Override
     public void onTestFailure(ITestResult result) {
-        try {
-            File screenshot = ((TakesScreenshot) DriverProvider.getDriver()).getScreenshotAs(OutputType.FILE);
-            String screenshotName = getFileName();
-            String path = getPath(screenshotName);
-            FileUtils.copyFile(screenshot, new File(path));
-            CustomLogger.logImage(screenshotName);
-
-        } catch (IOException e) {
-            LOGGER.error(e.getMessage());
-        }
+        outputErrors(result.getThrowable());
+        String newScreenshotName = result + getCurrentDateTime();
+        File outputFolder = new File(String.format(SCREENSHOT_SAVE_PATH, newScreenshotName));
+        takeScreenshot(outputFolder);
     }
 
-    private String getFileName() {
-        DateFormat dateFormat = new SimpleDateFormat("MM-dd-yyyy_hh.mm.ss");
-        Date date = new Date();
-        return dateFormat.format(date) + "Thread" + Thread.currentThread() + "_" + "screenshot" + ".png";
-    }
-
-    private String getPath(String name) {
-//        File directory = new File(".");
-        return "target\\surefire-reports\\html\\" + name;
+    private void outputErrors(Throwable throwable) {
+        LOG.error("Test failed");
+        LOG.error("Class: " + throwable.getClass());
+        LOG.error("Message: " + throwable.getMessage());
+        LOG.error(throwable.getStackTrace());
     }
 
     @Override
-    public void onTestSkipped(ITestResult result) {
-
+    public void onTestStart(ITestResult result) {
     }
 
     @Override
-    public void onTestFailedButWithinSuccessPercentage(ITestResult result) {
-
-    }
-
-    @Override
-    public void onStart(ITestContext context) {
-
-    }
-
-    @Override
-    public void onFinish(ITestContext context) {
-
+    public void onTestSuccess(ITestResult result) {
+        LOG.info("Test passed successfully!");
     }
 }
