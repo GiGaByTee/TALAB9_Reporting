@@ -34,9 +34,10 @@ public class ScreenshotFailureListener implements ITestListener {
     public void onTestFailure(ITestResult result) {
         try {
             File screenshot = ((TakesScreenshot) DriverProvider.getDriver()).getScreenshotAs(OutputType.FILE);
-            String path = getPath();
+            String screenshotName = getFileName();
+            String path = getPath(screenshotName);
             FileUtils.copyFile(screenshot, new File(path));
-            CustomLogger.logImage(path);
+            CustomLogger.logImage(screenshotName);
 
         } catch (IOException e) {
             LOGGER.error(e.getMessage());
@@ -46,12 +47,12 @@ public class ScreenshotFailureListener implements ITestListener {
     private String getFileName() {
         DateFormat dateFormat = new SimpleDateFormat("MM-dd-yyyy_hh.mm.ss");
         Date date = new Date();
-        return dateFormat.format(date) + "_" + "screenshot" + ".png";
+        return dateFormat.format(date) + "Thread" + Thread.currentThread() + "_" + "screenshot" + ".png";
     }
 
-    private String getPath() throws IOException {
-        File directory = new File(".");
-        return directory.getCanonicalPath() + "\\target\\surefire-reports\\screenShots\\" + getFileName();
+    private String getPath(String name) {
+//        File directory = new File(".");
+        return "target\\surefire-reports\\html\\" + name;
     }
 
     @Override
