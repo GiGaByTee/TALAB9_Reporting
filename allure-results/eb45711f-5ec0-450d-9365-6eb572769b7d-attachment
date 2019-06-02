@@ -1,0 +1,6 @@
+INFO  2019-06-02 14:52:14.934 MyCustomListener:27 - TestNG-PoolService-1: Test class started: TestGmail 
+INFO  2019-06-02 14:52:14.950 MyCustomListener:28 - TestNG-PoolService-1: Test started: LoginWriteSaveToDraftAndSendMessage 
+INFO  2019-06-02 14:52:14.932 MyCustomListener:27 - TestNG-PoolService-0: Test class started: TestGmail 
+INFO  2019-06-02 14:52:14.974 MyCustomListener:28 - TestNG-PoolService-0: Test started: LoginWriteSaveToDraftAndSendMessage 
+INFO  2019-06-02 14:54:26.165 MyCustomListener:38 - TestNG-PoolService-0: Test failed: LoginWriteSaveToDraftAndSendMessage 
+INFO  2019-06-02 14:54:26.165 MyCustomListener:38 - TestNG-PoolService-1: Test failed: LoginWriteSaveToDraftAndSendMessage 

@@ -1,0 +1,14 @@
+INFO  2019-06-02 14:11:52.043 MyCustomListener:28 - Test class started: TestGmail 
+INFO  2019-06-02 14:11:52.063 MyCustomListener:29 - Test started: LoginWriteSaveToDraftAndSendMessage 
+INFO  2019-06-02 14:11:52.051 MyCustomListener:28 - Test class started: TestGmail 
+INFO  2019-06-02 14:11:52.091 MyCustomListener:29 - Test started: LoginWriteSaveToDraftAndSendMessage 
+INFO  2019-06-02 14:12:59.361 WriteMessageBO:32 - You have successfully logged in. 
+INFO  2019-06-02 14:13:02.010 WriteMessageBO:32 - You have successfully logged in. 
+INFO  2019-06-02 14:14:10.738 WriteMessageBO:38 - Message was wrote but was not sent. 
+INFO  2019-06-02 14:14:15.070 WriteMessageBO:38 - Message was wrote but was not sent. 
+INFO  2019-06-02 14:14:19.509 WriteMessageBO:25 - Message was saved as a draft. 
+INFO  2019-06-02 14:14:21.761 WriteMessageBO:27 - Message was sent. 
+INFO  2019-06-02 14:14:21.769 MyCustomListener:33 - Test success: LoginWriteSaveToDraftAndSendMessage 
+INFO  2019-06-02 14:14:25.044 WriteMessageBO:25 - Message was saved as a draft. 
+INFO  2019-06-02 14:14:26.610 WriteMessageBO:27 - Message was sent. 
+INFO  2019-06-02 14:14:26.611 MyCustomListener:33 - Test success: LoginWriteSaveToDraftAndSendMessage 

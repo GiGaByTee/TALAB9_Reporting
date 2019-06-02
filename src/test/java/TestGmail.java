@@ -21,13 +21,13 @@ class TestGmail {
     @DataProvider(parallel = true)
     public Object[] getUsers() {
         FilePath filePath = new FilePath();
-        File json = new File(filePath.propertyFile("fileWayJSON"));
+        File json = new File(filePath.propertyFile("filePathJSON"));
         Parser parser = new Parser();
         return parser.getData(json);
     }
 
     @Test(dataProvider = "getUsers")
-    public void LoginTest(UserModel user) {
+    public void LoginWriteSaveToDraftAndSendMessage(UserModel user) {
         SignInBO signIn = new SignInBO();
         signIn.login(user.getLogin(), user.getPassword());
 

@@ -10,16 +10,11 @@ configuration:
 
   Appenders:
     File:
-      - name: File_AppenderHigherWarn
-        fileName: logs/File_AppenderHIGHERWARN.log
+      - name: Report_Appender
+        fileName: logs/Reporter.log
         PatternLayout:
           Pattern: "%highlight{%-5level} %style{%date{yyyy-MM-dd
                   HH:mm:ss.SSS}}{blue} %class{1}:%L - %highlight{%msg} %xEx{short}%n"
-        Filters:
-          ThresholdFilter:
-            level: error
-            onMatch: NEUTRAL
-            onMismatch: DENY
 
     Console:
       name: Console_Appender
@@ -32,24 +27,22 @@ configuration:
       level: all
       AppenderRef:
         - ref: Console_Appender
-        - ref: File_AppenderHigherWarn
+        - ref: Report_Appender
 
 
     Logger:
     - name: WriteMessageBO
-      additivity: false
       level: trace
       AppenderRef:
-        - ref: File_AppenderHigherWarn
+        - ref: Report_Appender
           level: warn
         - ref: Console_Appender
           level: info
 
     - name: MyCustomListener
-      additivity: false
       level: trace
       AppenderRef:
-        - ref: File_AppenderHigherWarn
+        - ref: Report_Appender
           level: warn
         - ref: Console_Appender
           level: info

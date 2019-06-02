@@ -13,7 +13,7 @@ public class DriverManager {
     private static FilePath filePath = new FilePath();
 
     static {
-        System.setProperty("webdriver.chrome.driver", filePath.propertyFile("fileWayChrome"));
+        System.setProperty("webdriver.chrome.driver", filePath.propertyFile("filePathChrome"));
     }
 
     private DriverManager() {
@@ -22,7 +22,7 @@ public class DriverManager {
     public static WebDriver getDriver() {
         if (Objects.isNull(driverPool.get())) {
             driverPool.set(new ChromeDriver());
-            driverPool.get().get(filePath.propertyFile("fileWayGmail"));
+            driverPool.get().get(filePath.propertyFile("filePathGmail"));
             driverPool.get().manage().timeouts().implicitlyWait(60, TimeUnit.SECONDS);
             driverPool.get().manage().window().maximize();
         }
