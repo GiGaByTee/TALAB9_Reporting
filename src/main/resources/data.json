@@ -1,0 +1,42 @@
+{
+  "users": [
+    {
+      "username": "sonyachanter@gmail.com",
+      "password": "sonichka13"
+    },
+    {
+      "username": "islamartinever@gmail.com",
+      "password": "pswd1234"
+    },
+    {
+      "username": "annaetienneclair@gmail.com",
+      "password": "pswd12345"
+    },
+    {
+      "username": "paprika0017@gmail.com",
+      "password": "423489123789op"
+    },
+    {
+      "username": "paprika0015@gmail.com",
+      "password": "423489123789op"
+    },
+    {
+      "username": "paprika0019@gmail.com",
+      "password": "423489123789op"
+    },
+    {
+      "username": "groot.epam@gmail.com",
+      "password": "iamgroot"
+    },
+    {
+      "username": "orest.zhmurkevych.secondary@gmail.com",
+      "password": "passwordfortest"
+    }
+  ],
+
+  "implicit_wait": 180,
+  "explicit_wait_page_load": 120,
+  "explicit_wait_button": 90,
+  "user_amount": 1,
+  "checkbox_amount": 3
+}
