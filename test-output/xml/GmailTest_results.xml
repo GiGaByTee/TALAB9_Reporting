@@ -1,51 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <testsuite name="Login and delete last 3 letters in important folder"
            tests="1"
-           failures="1"
+           failures="0"
            errors="0"
            skipped="0"
-           time="34,886">
+           time="25,173">
   <properties />
-            <testcase name="generalTest" time="34,886" classname="GmailTest">
-                <failure type="org.openqa.selenium.TimeoutException"
-                  message="Expected condition failed: waiting for url to contain &quot;imp&quot;. Current url: &quot;https://mail.google.com/mail/u/0/#inbox&quot; (tried for 10 second(s) with 500 MILLISECONDS interval)
-Build info: version: &apos;3.8.1&apos;, revision: &apos;6e95a6684b&apos;, time: &apos;2017-12-01T18:33:54.468Z&apos;
-System info: host: &apos;ROMANKA-ПК&apos;, ip: &apos;192.168.1.100&apos;, os.name: &apos;Windows 7&apos;, os.arch: &apos;amd64&apos;, os.version: &apos;6.1&apos;, java.version: &apos;1.8.0_171&apos;
-Driver info: org.openqa.selenium.chrome.ChromeDriver
-Capabilities {acceptInsecureCerts: false, acceptSslCerts: false, applicationCacheEnabled: false, browserConnectionEnabled: false, browserName: chrome, chrome: {chromedriverVersion: 74.0.3729.6 (255758eccf3d24..., userDataDir: C:\Users\836D~1\AppData\Loc...}, cssSelectorsEnabled: true, databaseEnabled: false, goog:chromeOptions: {debuggerAddress: localhost:59084}, handlesAlerts: true, hasTouchScreen: false, javascriptEnabled: true, locationContextEnabled: true, mobileEmulationEnabled: false, nativeEvents: true, networkConnectionEnabled: false, pageLoadStrategy: normal, platform: XP, platformName: XP, proxy: Proxy(), rotatable: false, setWindowRect: true, strictFileInteractability: false, takesHeapSnapshot: true, takesScreenshot: true, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unexpectedAlertBehaviour: ignore, unhandledPromptBehavior: ignore, version: 74.0.3729.169, webStorageEnabled: true}
-Session ID: a87e0b92a757794c202719f173cfdf55"
-              >
-<![CDATA[org.openqa.selenium.TimeoutException: Expected condition failed: waiting for url to contain "imp". Current url: "https://mail.google.com/mail/u/0/#inbox" (tried for 10 second(s) with 500 MILLISECONDS interval)
-Build info: version: '3.8.1', revision: '6e95a6684b', time: '2017-12-01T18:33:54.468Z'
-System info: host: 'ROMANKA-ПК', ip: '192.168.1.100', os.name: 'Windows 7', os.arch: 'amd64', os.version: '6.1', java.version: '1.8.0_171'
-Driver info: org.openqa.selenium.chrome.ChromeDriver
-Capabilities {acceptInsecureCerts: false, acceptSslCerts: false, applicationCacheEnabled: false, browserConnectionEnabled: false, browserName: chrome, chrome: {chromedriverVersion: 74.0.3729.6 (255758eccf3d24..., userDataDir: C:\Users\836D~1\AppData\Loc...}, cssSelectorsEnabled: true, databaseEnabled: false, goog:chromeOptions: {debuggerAddress: localhost:59084}, handlesAlerts: true, hasTouchScreen: false, javascriptEnabled: true, locationContextEnabled: true, mobileEmulationEnabled: false, nativeEvents: true, networkConnectionEnabled: false, pageLoadStrategy: normal, platform: XP, platformName: XP, proxy: Proxy(), rotatable: false, setWindowRect: true, strictFileInteractability: false, takesHeapSnapshot: true, takesScreenshot: true, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unexpectedAlertBehaviour: ignore, unhandledPromptBehavior: ignore, version: 74.0.3729.169, webStorageEnabled: true}
-Session ID: a87e0b92a757794c202719f173cfdf55
-  org.openqa.selenium.support.ui.WebDriverWait.timeoutException(WebDriverWait.java:82)
-  org.openqa.selenium.support.ui.FluentWait.until(FluentWait.java:231)
-  pageObjects.MainPage.openImportantFolder(MainPage.java:45)
-  businessObjects.MessagesBO.openImportantFolder(MessagesBO.java:30)
-  GmailTest.generalTest(GmailTest.java:32)
-  sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
-  sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
-  sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
-  java.lang.reflect.Method.invoke(Method.java:498)
-  org.testng.internal.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:131)
-  org.testng.internal.TestInvoker.invokeMethod(TestInvoker.java:570)
-  org.testng.internal.TestInvoker.invokeTestMethod(TestInvoker.java:170)
-  org.testng.internal.TestMethodWithDataProviderMethodWorker.call(TestMethodWithDataProviderMethodWorker.java:77)
-  org.testng.internal.TestMethodWithDataProviderMethodWorker.call(TestMethodWithDataProviderMethodWorker.java:15)
-  java.util.concurrent.FutureTask.run(FutureTask.java:266)
-  java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:511)
-  java.util.concurrent.FutureTask.run(FutureTask.java:266)
-  java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1149)
-  java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:624)
-  java.lang.Thread.run(Thread.java:748)
-]]>
-      </failure>
-
-          </testcase>
   
   
-  
+            <testcase name="generalTest" time="25,173" classname="GmailTest" />
+      
 </testsuite>

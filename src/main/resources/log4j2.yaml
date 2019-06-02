@@ -18,7 +18,7 @@ configuration:
     - name: File
       fileName: Logs/test-yaml.log
       PatternLayout:
-            pattern: "[%-5level] %d{yyyy-MM-dd HH:mm:ss.SSS} [%t] %c{1} - %msg%n"
+           Pattern: "%highlight{%-5level}{FATAL=bg_red}%highlight{%msg} %xEx{short}%n"
 
 
  Loggers:
@@ -26,11 +26,10 @@ configuration:
       level: all
       AppenderRef:
       - ref: Console
-      - ref: File
+      - name: File
 
     Logger:
         name: listener.CustomListener
         AppenderRef:
-        - ref: Console
         - ref: File
 
