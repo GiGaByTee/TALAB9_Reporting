@@ -25,13 +25,7 @@
                     <suiteXmlFiles>
                         <suiteXmlFile>testng.xml</suiteXmlFile>
                     </suiteXmlFiles>
-                    <systemPropertyVariables>
-                        <org.uncommons.reportng.escape-output>
-                            false
-                        </org.uncommons.reportng.escape-output>
-                    </systemPropertyVariables>
                     <properties>
-                        <!-- Setting ReportNG listeners -->
                         <property>
                             <name>listener</name>
                             <value>org.uncommons.reportng.HTMLReporter</value>
@@ -47,11 +41,6 @@
             <groupId>org.seleniumhq.selenium</groupId>
             <artifactId>selenium-java</artifactId>
             <version>3.8.1</version>
-        </dependency>
-        <dependency>
-            <groupId>com.google.inject</groupId>
-            <artifactId>guice</artifactId>
-            <version>3.0</version>
         </dependency>
         <!--Log4j2-->
         <dependency>
@@ -101,11 +90,6 @@
             <groupId>org.apache.commons</groupId>
             <artifactId>commons-io</artifactId>
             <version>1.3.2</version>
-        </dependency>
-        <dependency>
-            <groupId>org.testng</groupId>
-            <artifactId>testng</artifactId>
-            <version>7.0.0-beta3</version>
         </dependency>
     </dependencies>
 

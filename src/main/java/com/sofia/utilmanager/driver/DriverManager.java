@@ -33,7 +33,6 @@ public class DriverManager {
         DRIVER_POOL.set(new ChromeDriver());
         DRIVER_POOL.get().manage().timeouts()
                 .implicitlyWait(IMPLICIT_WAIT, TimeUnit.SECONDS);
-        //DRIVER_POOL.get().manage().timeouts().pageLoadTimeout(20, TimeUnit.SECONDS);
         DRIVER_POOL.get().manage().window().maximize();
         return DRIVER_POOL;
     }

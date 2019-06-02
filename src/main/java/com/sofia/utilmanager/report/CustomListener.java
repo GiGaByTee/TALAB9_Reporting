@@ -21,7 +21,7 @@ public class CustomListener implements ITestListener{
 
     private static String getCurrentDateTime() {
         Date instant = new Date();
-        SimpleDateFormat sdf = new SimpleDateFormat("_yyyy-MM-dd_HH.mm.ss.SSS");
+        SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd_HH.mm.ss.SSS");
         return sdf.format(instant);
     }
 
@@ -41,20 +41,20 @@ public class CustomListener implements ITestListener{
     @Override
     public void onTestFailure(ITestResult result) {
         outputErrors(result.getThrowable());
-        String newScreenshotName = result + getCurrentDateTime();
+        String newScreenshotName = getCurrentDateTime();
         File outputFolder = new File(String.format(SCREENSHOT_SAVE_PATH, newScreenshotName));
         takeScreenshot(outputFolder);
     }
 
     private void outputErrors(Throwable throwable) {
         LOG.error("Test failed");
-        LOG.error("Class: " + throwable.getClass());
         LOG.error("Message: " + throwable.getMessage());
         LOG.error(throwable.getStackTrace());
     }
 
     @Override
     public void onTestStart(ITestResult result) {
+        LOG.info("Let`s get it started");
     }
 
     @Override
