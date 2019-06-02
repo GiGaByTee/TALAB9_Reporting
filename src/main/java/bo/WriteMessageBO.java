@@ -19,19 +19,19 @@ public class WriteMessageBO {
     }
 
     public void sendMessage(){
-        logger.info("Message was saved as a draft.");
+        logger.info(Thread.currentThread().getName() + ": Message was saved as a draft.");
         draftMessagePage.sendMessage();
-        logger.info("Message was sent.");
+        logger.info(Thread.currentThread().getName() + ": Message was sent.");
     }
 
     public void tryToWriteMessage(String receiver, String subject, String message){
-        logger.info("You have successfully logged in.");
+        logger.info(Thread.currentThread().getName() + ": You have successfully logged in.");
         homePage.goToWriteMessage();
         writeMessage.inputReceiver(receiver);
         writeMessage.inputSubject(subject);
         writeMessage.inputMessage(message);
         writeMessage.toCloseMessage();
-        logger.info("Message was wrote but was not sent.");
+        logger.info(Thread.currentThread().getName() + ": Message was wrote but was not sent.");
     }
 
 }

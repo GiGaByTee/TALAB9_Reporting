@@ -10,21 +10,16 @@ configuration:
 
   Appenders:
     File:
-      - name: File_AppenderHigherWarn
-        fileName: logs/File_AppenderHIGHERWARN.log
-        PatternLayout:
-          Pattern: "%highlight{%-5level} %style{%date{yyyy-MM-dd
+       name: File_Appender
+       fileName: logs/Reporter.log
+       PatternLayout:
+         Pattern: "%highlight{%-5level} %style{%date{yyyy-MM-dd
                   HH:mm:ss.SSS}}{blue} %class{1}:%L - %highlight{%msg} %xEx{short}%n"
-        Filters:
-          ThresholdFilter:
-            level: error
-            onMatch: NEUTRAL
-            onMismatch: DENY
 
     Console:
-      name: Console_Appender
-      PatternLayout:
-        Pattern: "%highlight{%-5level}{FATAL=bg_red}  %highlight{%msg} %xEx{short}%n"
+       name: Console_Appender
+       PatternLayout:
+         Pattern: "%highlight{%-5level}{FATAL=bg_red}  %highlight{%msg} %xEx{short}%n"
 
   Loggers:
 
@@ -32,15 +27,15 @@ configuration:
       level: all
       AppenderRef:
         - ref: Console_Appender
-        - ref: File_AppenderHigherWarn
+        - ref: File_Appender
 
 
     Logger:
-      name: TestGmail
-      additivity: false
-      level: trace
-      AppenderRef:
-        - ref: File_AppenderHigherWarn
-          level: warn
-        - ref: Console_Appender
-          level: info
+      - name: CustomTestNGListener
+        additivity: false
+        level: trace
+        AppenderRef:
+          - ref: File_Appender
+            level: info
+          - ref: Console_Appender
+            level: info
