@@ -1,13 +1,28 @@
+buildscript {
+    repositories {
+        jcenter()
+    }
+    dependencies {
+        classpath "io.qameta.allure:allure-gradle:2.3"
+    }
+}
+
 plugins {
     id 'java'
     id 'maven-publish'
 }
 
 repositories {
-    mavenLocal()
-    maven {
-        url = 'http://repo.maven.apache.org/maven2'
-    }
+    mavenCentral()
+}
+
+configurations {
+    agent
+}
+
+ext {
+    aspectjVersion="1.8.6"
+    allureVersion="1.4.17"
 }
 
 dependencies {
@@ -18,6 +33,10 @@ dependencies {
     compile 'com.fasterxml.jackson.core:jackson-databind:2.9.4'
     compile 'com.googlecode.json-simple:json-simple:1.1.1'
     testCompile 'org.testng:testng:6.14.3'
+    compile "ru.yandex.qatools.allure:allure-report-data:${allureVersion}"
+    compile "ru.yandex.qatools.allure:allure-testng-adaptor:${allureVersion}"
+    agent   "org.aspectj:aspectjweaver:${aspectjVersion}"
+    compile group: 'ru.yandex.qatools.allure', name: 'allure-java-annotations', version: '1.5.4'
 }
 
 group = 'com.predko'
@@ -34,6 +53,7 @@ publishing {
 
 test {
     useTestNG()
+    systemProperty 'allure.results.directory', 'build/allure-results'
 }
 
 task afterExecution{
