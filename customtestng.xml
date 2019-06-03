@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+
+<!-- TestNG Documentation: http://testng.org/doc/documentation-main.html -->
+<!-- Change "false" to "tests", "methods", "classes" or "instances" for running in parallel.
+ See more details in the TestNG documentation. -->
+<suite name="Gmail Suite" verbose="2">
+    <listeners>
+        <listener class-name="com.halas.listener.SuiteAlterer"/>
+    </listeners>
+    <test name="gmail">
+        <classes>
+            <class name="com.halas.GmailTest"/>
+        </classes>
+    </test>
+</suite>

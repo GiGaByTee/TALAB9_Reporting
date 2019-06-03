@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="com.halas.GmailTest" tests="1" skipped="0" failures="0" errors="0" timestamp="2019-06-03T09:05:28" hostname="Yurii" time="24.945">
+  <properties/>
+  <testcase name="testSingInAndGoToSavedMessageAndCheckCorrectAndSendMess[0](paprika0015@gmail.com, 423489123789op)" classname="com.halas.GmailTest" time="24.945"/>
+  <system-out><![CDATA[?[32mINFO ?[m ?[32mAuthorise user..?[m 
+?[32mINFO ?[m ?[32mCheck success authorization..?[m 
+?[32mINFO ?[m ?[32mSUCCESS authorization.?[m 
+?[32mINFO ?[m ?[32mcreate draft message..?[m 
+?[32mINFO ?[m ?[32mFill message in gmail..?[m 
+?[32mINFO ?[m ?[32mGo to draft messages and click on first on top message.?[m 
+?[32mINFO ?[m ?[32mGet actual message from gmail..?[m 
+?[32mINFO ?[m ?[32mMessage FINE.?[m 
+?[32mINFO ?[m ?[32mSend message..?[m 
+]]></system-out>
+  <system-err><![CDATA[Starting ChromeDriver 74.0.3729.6 (255758eccf3d244491b8a1317aa76e1ce10d57e9-refs/branch-heads/3729@{#29}) on port 7689
+Only local connections are allowed.
+Please protect ports used by ChromeDriver and related test frameworks to prevent access by malicious code.
+черв. 03, 2019 12:05:25 ПП org.openqa.selenium.remote.ProtocolHandshake createSession
+INFO: Detected dialect: OSS
+]]></system-err>
+</testsuite>
