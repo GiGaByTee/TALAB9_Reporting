@@ -1,0 +1,133 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testng-results ignored="0" total="5" passed="5" failed="0" skipped="0">
+  <reporter-output>
+  </reporter-output>
+  <suite started-at="2019-06-03T12:11:54 EEST" name="com.halas.GmailTest" finished-at="2019-06-03T12:13:48 EEST" duration-ms="113627">
+    <groups>
+    </groups>
+    <test started-at="2019-06-03T12:11:54 EEST" name="Command line test" finished-at="2019-06-03T12:13:48 EEST" duration-ms="113627">
+      <class name="com.halas.GmailTest">
+        <test-method is-config="true" signature="initUrlAndPages()[pri:0, instance:com.halas.GmailTest@27953a83]" started-at="2019-06-03T12:11:54 EEST" name="initUrlAndPages" finished-at="2019-06-03T12:12:08 EEST" duration-ms="14204" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- initUrlAndPages -->
+        <test-method is-config="true" signature="initUrlAndPages()[pri:0, instance:com.halas.GmailTest@27953a83]" started-at="2019-06-03T12:11:54 EEST" name="initUrlAndPages" finished-at="2019-06-03T12:12:08 EEST" duration-ms="14168" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- initUrlAndPages -->
+        <test-method is-config="true" signature="initUrlAndPages()[pri:0, instance:com.halas.GmailTest@27953a83]" started-at="2019-06-03T12:11:54 EEST" name="initUrlAndPages" finished-at="2019-06-03T12:12:08 EEST" duration-ms="13844" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- initUrlAndPages -->
+        <test-method is-config="true" signature="initUrlAndPages()[pri:0, instance:com.halas.GmailTest@27953a83]" started-at="2019-06-03T12:11:54 EEST" name="initUrlAndPages" finished-at="2019-06-03T12:12:08 EEST" duration-ms="13966" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- initUrlAndPages -->
+        <test-method is-config="true" signature="initUrlAndPages()[pri:0, instance:com.halas.GmailTest@27953a83]" started-at="2019-06-03T12:11:54 EEST" name="initUrlAndPages" finished-at="2019-06-03T12:12:09 EEST" duration-ms="14486" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- initUrlAndPages -->
+        <test-method signature="testSingInAndGoToSavedMessageAndCheckCorrectAndSendMess(java.lang.String, java.lang.String)[pri:0, instance:com.halas.GmailTest@27953a83]" started-at="2019-06-03T12:12:08 EEST" name="testSingInAndGoToSavedMessageAndCheckCorrectAndSendMess" data-provider="usersLoginPassword" finished-at="2019-06-03T12:13:23 EEST" duration-ms="75389" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[paprika0019@gmail.com]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA[423489123789op]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- testSingInAndGoToSavedMessageAndCheckCorrectAndSendMess -->
+        <test-method signature="testSingInAndGoToSavedMessageAndCheckCorrectAndSendMess(java.lang.String, java.lang.String)[pri:0, instance:com.halas.GmailTest@27953a83]" started-at="2019-06-03T12:12:08 EEST" name="testSingInAndGoToSavedMessageAndCheckCorrectAndSendMess" data-provider="usersLoginPassword" finished-at="2019-06-03T12:13:44 EEST" duration-ms="96218" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[paprika0015@gmail.com]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA[423489123789op]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- testSingInAndGoToSavedMessageAndCheckCorrectAndSendMess -->
+        <test-method signature="testSingInAndGoToSavedMessageAndCheckCorrectAndSendMess(java.lang.String, java.lang.String)[pri:0, instance:com.halas.GmailTest@27953a83]" started-at="2019-06-03T12:12:08 EEST" name="testSingInAndGoToSavedMessageAndCheckCorrectAndSendMess" data-provider="usersLoginPassword" finished-at="2019-06-03T12:13:44 EEST" duration-ms="95651" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[paprika0017@gmail.com]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA[423489123789op]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- testSingInAndGoToSavedMessageAndCheckCorrectAndSendMess -->
+        <test-method signature="testSingInAndGoToSavedMessageAndCheckCorrectAndSendMess(java.lang.String, java.lang.String)[pri:0, instance:com.halas.GmailTest@27953a83]" started-at="2019-06-03T12:12:08 EEST" name="testSingInAndGoToSavedMessageAndCheckCorrectAndSendMess" data-provider="usersLoginPassword" finished-at="2019-06-03T12:13:22 EEST" duration-ms="73819" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[paprika0018@gmail.com]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA[423489123789op]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- testSingInAndGoToSavedMessageAndCheckCorrectAndSendMess -->
+        <test-method signature="testSingInAndGoToSavedMessageAndCheckCorrectAndSendMess(java.lang.String, java.lang.String)[pri:0, instance:com.halas.GmailTest@27953a83]" started-at="2019-06-03T12:12:09 EEST" name="testSingInAndGoToSavedMessageAndCheckCorrectAndSendMess" data-provider="usersLoginPassword" finished-at="2019-06-03T12:13:36 EEST" duration-ms="87665" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[paprika0020@gmail.com]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA[423489123789op]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- testSingInAndGoToSavedMessageAndCheckCorrectAndSendMess -->
+        <test-method is-config="true" signature="closeResources()[pri:0, instance:com.halas.GmailTest@27953a83]" started-at="2019-06-03T12:13:22 EEST" name="closeResources" finished-at="2019-06-03T12:13:26 EEST" duration-ms="3566" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- closeResources -->
+        <test-method is-config="true" signature="closeResources()[pri:0, instance:com.halas.GmailTest@27953a83]" started-at="2019-06-03T12:13:24 EEST" name="closeResources" finished-at="2019-06-03T12:13:26 EEST" duration-ms="2673" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- closeResources -->
+        <test-method is-config="true" signature="closeResources()[pri:0, instance:com.halas.GmailTest@27953a83]" started-at="2019-06-03T12:13:36 EEST" name="closeResources" finished-at="2019-06-03T12:13:39 EEST" duration-ms="2119" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- closeResources -->
+        <test-method is-config="true" signature="closeResources()[pri:0, instance:com.halas.GmailTest@27953a83]" started-at="2019-06-03T12:13:44 EEST" name="closeResources" finished-at="2019-06-03T12:13:48 EEST" duration-ms="3757" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- closeResources -->
+        <test-method is-config="true" signature="closeResources()[pri:0, instance:com.halas.GmailTest@27953a83]" started-at="2019-06-03T12:13:44 EEST" name="closeResources" finished-at="2019-06-03T12:13:47 EEST" duration-ms="3030" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- closeResources -->
+      </class> <!-- com.halas.GmailTest -->
+    </test> <!-- Command line test -->
+  </suite> <!-- com.halas.GmailTest -->
+</testng-results>
