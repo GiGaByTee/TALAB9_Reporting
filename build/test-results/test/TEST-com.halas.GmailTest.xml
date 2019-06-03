@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testsuite name="com.halas.GmailTest" tests="1" skipped="0" failures="0" errors="0" timestamp="2019-06-02T18:52:25" hostname="Yurii" time="27.542">
+<testsuite name="com.halas.GmailTest" tests="1" skipped="0" failures="0" errors="0" timestamp="2019-06-03T11:12:49" hostname="Yurii" time="22.163">
   <properties/>
-  <testcase name="testSingInAndGoToSavedMessageAndCheckCorrectAndSendMess[0](paprika0015@gmail.com, 423489123789op)" classname="com.halas.GmailTest" time="27.542"/>
+  <testcase name="testSingInAndGoToSavedMessageAndCheckCorrectAndSendMess[0](paprika0015@gmail.com, 423489123789op)" classname="com.halas.GmailTest" time="22.163"/>
   <system-out><![CDATA[?[32mINFO ?[m ?[32mAuthorise user..?[m 
 ?[32mINFO ?[m ?[32mCheck success authorization..?[m 
 ?[32mINFO ?[m ?[32mSUCCESS authorization.?[m 
@@ -12,10 +12,10 @@
 ?[32mINFO ?[m ?[32mMessage FINE.?[m 
 ?[32mINFO ?[m ?[32mSend message..?[m 
 ]]></system-out>
-  <system-err><![CDATA[Starting ChromeDriver 74.0.3729.6 (255758eccf3d244491b8a1317aa76e1ce10d57e9-refs/branch-heads/3729@{#29}) on port 45624
+  <system-err><![CDATA[Starting ChromeDriver 74.0.3729.6 (255758eccf3d244491b8a1317aa76e1ce10d57e9-refs/branch-heads/3729@{#29}) on port 45456
 Only local connections are allowed.
 Please protect ports used by ChromeDriver and related test frameworks to prevent access by malicious code.
-черв. 02, 2019 9:52:21 ПП org.openqa.selenium.remote.ProtocolHandshake createSession
+черв. 03, 2019 2:12:46 ПП org.openqa.selenium.remote.ProtocolHandshake createSession
 INFO: Detected dialect: OSS
 ]]></system-err>
 </testsuite>
