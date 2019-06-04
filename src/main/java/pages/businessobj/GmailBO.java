@@ -23,7 +23,7 @@ public class GmailBO {
         gmailPage.expWait(25).until(ExpectedConditions.visibilityOf(gmailPage.getViewEmailSentMsgBtn().getWebElement()));
     }
 
-    @Step("Verifying if 'Email sent' message is displayed")
+    @Step("Verify if 'Email sent' message is displayed")
     public boolean isViewEmailSentMsgBtnDisplayed(){
         return gmailPage.getViewEmailSentMsgBtn().isDisplayed();
     }
@@ -33,7 +33,7 @@ public class GmailBO {
         gmailPage.checkUnreadEmailsInboxAndDelete(emailsQty);
     }
 
-    @Step("Verifu if emails are deleted")
+    @Step("Verify if emails are deleted")
     public boolean areEmailsDeleted(){
         return gmailPage.isDeleteEmailsSuccessMessageDisplayed();
     }

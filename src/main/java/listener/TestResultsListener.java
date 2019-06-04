@@ -1,7 +1,11 @@
 package listener;
 
+import driver.DriverManager;
+import io.qameta.allure.Attachment;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
+import org.openqa.selenium.OutputType;
+import org.openqa.selenium.TakesScreenshot;
 import org.testng.ITestContext;
 import org.testng.ITestListener;
 import org.testng.ITestResult;
@@ -22,6 +26,8 @@ public class TestResultsListener implements ITestListener {
     @Override
     public void onTestFailure(ITestResult iTestResult) {
         logger.error("Test " + iTestResult.getName() + " failed");
+        byte[] srcFile =  ((TakesScreenshot) DriverManager.getDriver()).getScreenshotAs(OutputType.BYTES);
+        saveScreenshot(srcFile);
     }
 
     @Override
@@ -41,5 +47,12 @@ public class TestResultsListener implements ITestListener {
 
     @Override
     public void onFinish(ITestContext iTestContext) {
-        logger.trace("Test " + iTestContext.getName() + " finished");    }
+        logger.trace("Test " + iTestContext.getName() + " finished");
+    }
+
+    @Attachment(value = "Page screenshot", type = "image/png")
+    private byte[] saveScreenshot(byte[] screenshot) {
+        return screenshot;
+    }
+
 }

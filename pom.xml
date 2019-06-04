@@ -30,12 +30,6 @@
                     <argLine>
                         -javaagent:"${settings.localRepository}/org/aspectj/aspectjweaver/${aspectj.version}/aspectjweaver-${aspectj.version}.jar"
                     </argLine>
-                    <properties>
-                        <property>
-                            <name>listener</name>
-                            <value>listener.TestResultsListener</value>
-                        </property>
-                    </properties>
                     <systemProperties>
                         <property>
                             <name>allure.results.directory</name>
