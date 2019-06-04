@@ -1,0 +1,66 @@
+plugins {
+    id 'groovy'
+    id 'java'
+}
+
+group 'TA9'
+version '1.0-SNAPSHOT'
+
+sourceCompatibility = 1.8
+
+repositories {
+    mavenCentral()
+}
+
+configurations {
+    cucumberRuntime {
+        extendsFrom testImplementation
+    }
+}
+
+dependencies {
+    compile 'org.codehaus.groovy:groovy-all:2.3.11'
+    compile group: 'org.seleniumhq.selenium', name: 'selenium-java', version: '3.141.59'
+    compile group: 'org.apache.logging.log4j', name: 'log4j-api', version: '2.11.2'
+    compile group: 'org.apache.logging.log4j', name: 'log4j-core', version: '2.11.2'
+    compile group: 'com.fasterxml.jackson.dataformat', name: 'jackson-dataformat-yaml', version: '2.9.4'
+    compile group: 'com.fasterxml.jackson.core', name: 'jackson-databind', version: '2.9.4'
+    compile group: 'com.opencsv', name: 'opencsv', version: '4.6'
+    testCompile group: 'io.cucumber', name: 'cucumber-junit', version: '4.3.1'
+    compile group: 'io.cucumber', name: 'cucumber-testng', version: '4.3.1'
+    compile group: 'io.cucumber', name: 'cucumber-java', version: '4.3.1'
+    testImplementation 'io.cucumber:cucumber-java:4.3.1'
+    testCompile group: 'junit', name: 'junit', version: '4.12'
+    testCompile group: 'org.testng', name: 'testng', version: '6.14.3'
+    testCompile group: 'org.uncommons', name: 'reportng', version: '1.1.4'
+}
+
+task cucumber() {
+    dependsOn assemble, compileTestJava
+    doLast {
+        javaexec {
+            main = "cucumber.api.cli.Main"
+            classpath = configurations.cucumberRuntime + sourceSets.main.output + sourceSets.test.output
+            args = ['--plugin', 'pretty', '--glue', 'cucumber.steps', 'src/test/resources/features']
+        }
+    }
+}
+
+task runSeleniumTests(type: Test){
+    useTestNG(){
+        useDefaultListeners = false
+        options {
+            listeners << 'org.uncommons.reportng.HTMLReporter'
+            listeners << 'org.uncommons.reportng.JUnitXMLReporter'
+        }
+    }
+}
+
+test {
+    useTestNG()
+    options {
+        listeners << 'org.uncommons.reportng.HTMLReporter'
+        listeners << 'org.uncommons.reportng.JUnitXMLReporter'
+    }
+}
+

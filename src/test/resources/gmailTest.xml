@@ -1,0 +1,14 @@
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd" >
+
+<suite name="ParallelSuite" verbose="2" data-provider-thread-count="3">
+    <listeners>
+        <listener class-name="org.uncommons.reportng.HTMLReporter"/>
+        <listener class-name="listener.CustomListener"/>
+    </listeners>
+    <test name="default">
+        <classes>
+            <class name="GmailTest"/>
+            <!--<class name="cucumber.TestNGRunner"/>-->
+        </classes>
+    </test>
+</suite>
