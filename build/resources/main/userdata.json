@@ -1,0 +1,41 @@
+[
+	{
+	"userName":"1234454n@gmail.com",
+	"password":"1401198n",
+	"emailReceiver": "stepankish@gmail.com",
+	"subject": "Test1",
+	"text": "Hello my friend"
+},
+
+{
+	"userName":"3242123n@gmail.com",
+	"password":"1401198n",
+	"emailReceiver": "stepankish@gmail.com",
+	"subject": "Test2",
+	"text": "Please read the text below"
+},
+
+{
+	"userName":"4323234n@gmail.com",
+	"password":"2705197n",
+	"emailReceiver": "stepankish@gmail.com",
+	"subject": "Test3",
+	"text": "If you like this"
+},
+{
+	"userName":"4225643n@gmail.com",
+	"password":"2705197n",
+	"emailReceiver": "stepankish@gmail.com",
+	"subject": "Test4",
+	"text": "Please send me your answer"
+},
+
+{
+	"userName":"1401test2705@gmail.com",
+	"password":"1401198n",
+	"emailReceiver": "stepankish@gmail.com",
+	"subject": "Test5",
+	"text": "To my viber account"
+}
+]
+
