@@ -1,0 +1,6 @@
+<!DOCTYPE properties SYSTEM "http://java.sun.com/dtd/properties.dtd">
+<properties>
+    <entry key ="receiver_email">stepankish@gmail.com</entry>
+    <entry key ="subject">Test</entry>
+    <entry key ="text">Welcome my friend</entry>
+</properties>
