@@ -56,7 +56,8 @@ public class MainPage extends BasePage {
     }
 
     public void openListOfDrafts() {
-        wait.ignoring(StaleElementReferenceException.class).until(ExpectedConditions.elementToBeClickable(By.xpath("//a[contains(@href,'drafts')]")));
+        wait.ignoring(StaleElementReferenceException.class).until(ExpectedConditions.
+                elementToBeClickable(By.xpath("//a[contains(@href,'drafts')]")));
         draftFolder.click();
        }
 
@@ -78,7 +79,6 @@ public class MainPage extends BasePage {
 
     public void clickSendButton() {
         sendButton.click();
-        wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//div[@class = 'vh']")));
     }
 }
 
