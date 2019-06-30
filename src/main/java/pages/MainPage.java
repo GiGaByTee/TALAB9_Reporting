@@ -1,6 +1,7 @@
 package pages;
 
 import elements.*;
+import model.Email;
 import org.openqa.selenium.By;
 import org.openqa.selenium.StaleElementReferenceException;
 import org.openqa.selenium.support.FindBy;
@@ -65,16 +66,12 @@ public class MainPage extends BasePage {
         lastMessageInDraftFolder.click();
     }
 
-    public String takeEmailAddress() {
-        return savedEmail.getAttribute("email");
-    }
-
-    public String takeLetterSubject() {
-        return subjectField.getAttribute("value");
-    }
-
-    public String takeLetterText() {
-        return textField.getText();
+    public Email takeEmail() {
+        Email email = new Email();
+        email.setEmailAddress(savedEmail.getAttribute("email"));
+        email.setSubject(subjectField.getAttribute("value"));
+        email.setBody(textField.getText());
+        return email;
     }
 
     public void clickSendButton() {

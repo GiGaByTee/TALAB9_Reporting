@@ -1,6 +1,7 @@
 import business.LoginPageBO;
 import business.MainPageBO;
 import dataproviders.UserDataProvider;
+import model.Email;
 import org.apache.log4j.LogManager;
 import org.apache.log4j.Logger;
 import org.junit.Assert;
@@ -26,17 +27,18 @@ public class GmailPageTest {
 
     @Test(dataProvider = "loginData")
     public void correctlySavedDataTest(String email, String password, String receiverEmail, String subject, String text) {
+        Email enteredEmail = new Email();
+        enteredEmail.setEmailAddress(receiverEmail);
+        enteredEmail.setSubject(subject);
+        enteredEmail.setBody(text);
         LoginPageBO loginBO = new LoginPageBO();
         MainPageBO mainPageBO = new MainPageBO();
         loginBO.login(email, password);
         mainPageBO.composeEmail(receiverEmail, subject, text);
         mainPageBO.openSavedDraft();
-        Assert.assertTrue(mainPageBO.isSavedEmailInDraftEqualsToEntered(receiverEmail));
-        logger.info("Saved email address equals to entered");
-        Assert.assertTrue(mainPageBO.isSavedSubjectEqualsToEntered(subject));
-        logger.info("Saved subject of letter equals to entered");
-        Assert.assertTrue(mainPageBO.isSavedLetterTextEqualsToEntered(text));
-        logger.info("Saved text message equals to entered");
+        Email savedEmail = mainPageBO.getSavedEmail();
+        Assert.assertTrue(enteredEmail.equals(savedEmail));
+        logger.info("Saved email equals to entered");
         mainPageBO.sendLetter();
     }
 
